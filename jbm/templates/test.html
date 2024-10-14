@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Test Page</title>
+	<style>
+		.popup-container
+		{
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: none;
+			position: fixed;
+			align-items: center;
+			justify-content: center;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+
+		.popup-content
+		{
+			width: 600px;
+			padding: 70px;
+			height: 500px;
+			margin-top: 40px;
+			border-radius: 10px;
+			background-color: white;
+		}
+
+		.popup-content fieldset
+		{
+			margin-top: -50px;
+		}
+
+		.close
+		{
+			float: right;
+			color: white;
+			font-size: 20px;
+			cursor: pointer;
+		}
+
+		.popup-content input
+		{
+			width: 395px;
+			margin-left: 80px;
+		}
+
+		.popup-content select
+		{
+			width: 403px;
+			margin-left: 80px;
+		}
+
+		.popup-content label
+		{
+			margin-left: 80px;
+		}
+	</style>
+</head>
+<body>
+	<table class="data">
+		<tr style="background-color: rgb(219, 216, 216); color: #000;">
+			<td style="width: 150px;">Patient Number</td>
+			<td style="width: 260px;">Patient Name</td>
+			<td style="width: 150px;">Phone Number</td>
+			<td style="width: 120px;">Gender</td>
+			<td style="width: 150px;">Date of Birth</td>
+			<td style="width: 75px;"></td>
+		</tr>
+	</table>
+	<hr>
+	<table class="data" id="data">
+		<tbody>
+			<tr>
+				<td style="width: 150px">PAT/2024/01</td>
+				<td style="width: 260px">Reagan Muwanika</td>
+				<td style="width: 150px">0708114809</td>
+				<td style="width: 120px">Male</td>
+				<td style="width: 150px">10-05-2000</td>
+				<td style="width: 75px"><button id="editBtn" value="PAT/2024/01" class="edit-btn" style="background-color: blueviolet; border: none; color: white;">Edit</button></td>
+			</tr>
+		</tbody>
+	</table>
+	<!-- <button class="btn" style="margin-top: 5px;margin-left: 5px"><a href="{{ url_for('patient.register') }}">New Patient</a></button> -->
+	<div id="popupContainer" class="popup-container">
+		<div class="popup-content">
+			<span id="closePopup" class="close">&times;</span>
+			<form method="post">
+				<fieldset>
+					<legend><strong>Update Patient Record</strong></legend>
+				
+					<label for="fname"><span>*</span>First Name</label><br>
+					<input type="text" name="fname" required><br><br>
+					<label for="lname"><span>*</span>Other Names</label><br>
+					<input type="text" name="lname" required><br><br>
+					<label for="pat_tel">Phone Number</label><br>
+					<input type="text" name="pat_tel"><br><br>
+					<label for="village">Village</label><br>
+					<input type="text" name="village"><br><br>
+					<label for="parish">Parish</label><br>
+					<input type="text" name="parish"><br><br>
+					<label for="kin_name"><span>*</span>Next of Kin</label><br>
+					<input type="text" name="kin_name" required><br><br>
+					<label for="kin_tel"><span>*</span>Next of Kin Tel</label><br>
+					<input type="text" name="kin_tel" required><br><br>
+					<input type="submit" id="update" value="Update" class="btn" style="width: 100px; margin-left: 250px;"><br><br>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+	<script>
+		document.querySelectorAll(".edit-btn").forEach((button) => {
+			button.addEventListener("click", function () {
+				document.getElementById("popupContainer").style.display = "flex";
+				});
+			});
+		document
+			.getElementById("closePopup")
+			.addEventListener("click", function () {
+				document.getElementById("popupContainer").style.display = "none";
+			});
+		window.addEventListener("click", function (event) {
+			if (event.target === document.getElementById("popupContainer")) {
+				document.getElementById("popupContainer").style.display = "none";
+			}
+		});
+		document.getElementById("editBtn").addEventListener("click", btnPress);
+		function btnPress()
+		{
+			var patient_number = document.getElementById("editBtn").value;
+			console.log(patient_number);
+		}
+		document.getElementById("update").addEventListener("click", updates);
+		function updates()
+		{
+			
+		}
+	</script>
+</body>
+</html>

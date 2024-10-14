@@ -1,0 +1,58 @@
+<div id="popupContainer" class="popup-container">
+	<div class="popup-content">
+		<span id="closePopup" class="close">&times;</span>
+		<form method="post">
+			<fieldset>
+				<legend><strong>Update Patient Record</strong></legend>
+				<label for="fname"><span>*</span>First Name</label><br>
+		<input type="text" name="fname" value="{{ patient[0] }}"><br><br>
+		<label for="lname"><span>*</span>Other Names</label><br>
+		<input type="text" name="lname" value="{{ patient[1] }}"><br><br>
+		<label for="sex"><span>*</span>Gender</label><br>
+		<input type="text" name="sex" value="{{ patient[2] }}" readonly>
+		<br><br>
+		<label for="dob"><span>*</span>Date of Birth</label><br>
+		<input type="date" name="dob" value="{{ patient[3] }}" readonly>
+		<br><br>
+		<label for="pat_tel">Phone Number</label><br>
+		<input type="text" name="pat_tel" value="0{{ patient[6] }}"><br><br>
+		<label for="village">Village</label><br>
+		<input type="text" name="village" value="{{ patient[4] }}"><br><br>
+		<label for="parish">Parish</label><br>
+		<input type="text" name="parish" value="{{ patient[5] }}"><br><br>
+		<label for="kin_name"><span>*</span>Next of Kin</label><br>
+		<input type="text" name="kin_name" value="{{ patient[7] }}" required><br><br>
+		<label for="kin_tel"><span>*</span>Next of Kin Tel</label><br>
+		<input type="text" name="kin_tel" value="0{{ patient[8] }}" required><br><br>
+		<label for="relationship">Relationship</label><br>
+		{% if rs %}
+			<select name="relationship">
+				{% for option in rs %}
+					<option value="{{ option }}">{{ option }}</option>
+				{% endfor %}
+			</select>
+		{% endif %}
+		<br><br>
+		<input type="submit" value="Update" class="btn" style="width: 100px; margin-left: 250px;"><br><br>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+<script>
+	document.querySelectorAll(".edit-btn").forEach((button) => {
+		button.addEventListener("click", function () {
+			document.getElementById("popupContainer").style.display = "flex";
+			});
+		});
+	document
+		.getElementById("closePopup")
+		.addEventListener("click", function () {
+			document.getElementById("popupContainer").style.display = "none";
+		});
+	window.addEventListener("click", function (event) {
+		if (event.target === document.getElementById("popupContainer")) {
+			document.getElementById("popupContainer").style.display = "none";
+		}
+	});
+</script>

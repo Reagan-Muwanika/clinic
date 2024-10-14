@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Generate Medical Report{% endblock %}
+
+{% block main_content %}
+    <form method="post" class="my_form">
+        <fieldset>
+            <legend>Generate a Medical Report</legend>
+            {% for message in get_flashed_messages() %}
+                <div class="flash">{{ message }}</div>
+            {% endfor %}
+            <label><span>*</span>Patient Number:</label>
+            <input type="text" name="pat_no" style="width: 415px;">
+            <br><br>
+            <label>Weight:</label>
+            <input type="text" name="weight" style="width: 50px; margin-left: 5px;">
+            <label style="margin-left: 10px;">Temp:</label>
+            <input type="text" name="temperature"style="width: 50px; margin-left: 10px;">
+            <label style="margin-left: 15px;">Blood Pressure:</label>
+            <input type="text" name="blood-pressure"style="width: 50px; margin-left: 10px;"><br><br>
+            <label><span>*</span>Enter Patient's Complaints.</label><br>
+            <textarea name="complaints"></textarea><br><br>
+            <label>Suggested Tests</label><br>
+            <textarea name="sugg_tests"></textarea><br><br>
+            <label>Current Treatment (if any)</label><br>
+            <textarea name="ongoing_treat"></textarea><br><br>
+            <label><span>*</span>Diagnosis</label><br>
+            <textarea name="diagnosis"></textarea><br><br>
+            <label><span>*</span>Treatment To Be Given</label><br>
+            <textarea name="new_treat"></textarea><br><br>
+            <input type="submit" value="Save" class="btn" style="width: 100px; margin-left: 300px;">
+        </fieldset> 
+    </form>
+{% endblock %}

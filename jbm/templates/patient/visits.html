@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Test Page</title>
+		<style type="text/css">
+			td
+			{
+				width: 200px;
+				text-align: left;
+			}
+		</style>
+	</head>
+	<body>
+		<fieldset>
+			<legend>Advanced Search</legend>
+			<form method="post">
+				<table>
+					<tr>
+						<td><input type="text" name="country" placeholder="Patient Name"></td>
+						<td><input type="submit" value="Search" class="search-btn"></td>
+					</tr>
+				</table>
+			</form>
+		</fieldset>
+		<table>
+			<tr>
+				<td class="headings">#Visit</td>
+				<td class="headings">Date</td>
+				<td class="headings">Time</td>
+				<td class="headings">Department</td>
+				<td class="headings">File Number</td>
+				<td class="headings">Patient Name</td>
+				<td class="headings">Gender</td>
+				<td class="headings">Doctor</td>
+			</tr>
+		</table>
+		<hr>
+		<table class="data" id="data">
+			<tbody>
+				{% for result in data %}
+					<tr>
+						<td>{{ result[0] }}</td>
+						<td>{{ result[1] }}</td>
+						<td>{{ result[2] }}</td>
+						<td>{{ result[3] }}</td>
+						<td>{{ result[4] }}</td>
+						<td>{{ result[5] }}</td>
+						<td>{{ result[6] }}</td>
+						<td>{{ result[7] }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</body>
+</html>

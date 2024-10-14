@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Patient Data{% endblock %}
+
+{% block main_content %}
+	{% include 'data_form.html' %}
+	<table class="data">
+		<tr>
+			<td style="width: 150px;">Patient Number</td>
+			<td style="width: 260px;">Patient Name</td>
+			<td style="width: 180px;">Phone Number</td>
+			<td style="width: 100px;">Gender</td>
+			<td style="width: 120px;">Date of Birth</td>
+		</tr>
+	</table>
+	<hr>
+	<table class="data" id="data">
+		<tbody>
+			{% for patient in patients %}
+				<tr>
+					<td style="width: 150px;">{{ patient[1] }}</td>
+					<td style="width: 260px;">{{ patient[2] }}</td>
+					<td style="width: 180px;">0{{ patient[3] }}</td>
+					<td style="width: 100px;">{{ patient[4] }}</td>
+					<td style="width: 120px;">{{ patient[5] }}</td>
+					<td style="width: 100px;"><button style="width: 70px; background-color: blueviolet; border: none;"><a href="{{ url_for('patient.update_patient_details', patient_id = patient[0]) }}">Edit</a></button></td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

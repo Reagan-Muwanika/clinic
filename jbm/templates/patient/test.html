@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Test Form{% endblock %}
+
+{% block main_content %}
+	<form method="post" class="my_form">
+		<fieldset>
+			<legend>Test Details</legend>
+			{% for message in get_flashed_messages() %}
+		   		<div class="flash">{{ message }}</div>
+		    {% endfor %}
+			<label><span>*</span>Test Name</label>
+			<input type="text" name="test_name" required><br><br>
+			<label>Test Type</label>
+			<input type="text" name="test_type" required><br><br>
+			<label><span>*</span>Unit Price</label>
+			<input type="number" name="unit_price" required><br><br>
+			<label><span>*</span>Status</label>
+			<input type="text" name="status" required><br><br>
+			<label><span>*</span>Result</label>
+			<input type="text" name="result" required><br><br>
+			<input type="submit" value="Save" class="btn" style="width: 100px; margin-left: 300px;">
+		</fieldset>	
+	</form>
+{% endblock %}

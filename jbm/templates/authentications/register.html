@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}Staff Member Registration{% endblock %}
+
+{% block main_content %}
+	<form method="post" class="my_form">
+		<fieldset>
+			<legend><strong>Register New Staff</strong></legend>
+			{% for message in get_flashed_messages() %}
+		   		<div class="flash">{{ message }}</div>
+		    {% endfor %}
+			<label for="fname"><span>*</span>First Name</label><br>
+			<input type="text" name="fname"><br><br>
+			<label for="lname"><span>*</span>Other Names</label><br>
+			<input type="text" name="lname"><br><br>
+			<label for="sex"><span>*</span>Gender</label><br>
+			{% if gr %}
+				<select name="sex" placeholder = "Gender">
+					{% for option in gr %}
+						<option value="{{option}}">{{option}}</option>
+					{% endfor %}
+				</select>
+			{% endif %}
+			<br><br>
+			<label for="dob"><span>*</span>Date of Birth</label><br>
+			{% if years %}
+				<select name="year" style="width: 125px;">
+					{% for option in years %}
+						<option value="{{ option }}">{{ option }}</option>
+					{% endfor %}	
+				</select>
+			{% endif %}
+			{% if months %}
+				<select name="month" style="width: 125px; margin-left: 10px;">
+					{% for option in months %}
+						<option value="{{ option }}">{{ option }}</option>
+					{% endfor %}	
+				</select>
+			{% endif %}
+			{% if days %}
+				<select name="day" style="width: 125px; margin-left: 10px;">
+					{% for option in days %}
+						<option value="{{ option }}">{{ option }}</option>
+					{% endfor %}	
+				</select>
+			{% endif %}
+			<br><br>
+			<label for="tel"><span>*</span>Phone Number</label><br>
+			<input type="text" name="tel"><br><br>
+			<label for="parish">Parish</label><br>
+			<input type="text" name="parish"><br><br>
+			<label for="village">Village</label><br>
+			<input type="text" name="village"><br><br>
+			<label for="depart"><span>*</span>Department</label><br>
+			{% if depart %}
+				<select name="depart">
+					{% for option in depart %}
+						<option value="{{option}}">{{option}}</option>
+					{% endfor %}
+				</select>
+			{% endif %}
+			<br><br>
+			<label for="username"><span>*</span>Username</label><br>
+			<input type="text" name="username"><br><br>
+			<label for="password"><span>*</span>Password</label><br>
+			<input type="password" name="password"><br><br>
+			<label for="confirm"><span>*</span>Confirm Password</label><br>
+			<input type="password" name="confirm"><br><br>
+			<input type="submit" value="Register" class="btn" style="width: 100px; margin-left: 250px;">
+			<button class="btn" style="width: 100px;"><a href="{{ url_for('authentications.register') }} " style="color: whitesmoke;">Reset</a></button>
+			<br><br>
+		</fieldset>	
+	</form>
+{% endblock %}

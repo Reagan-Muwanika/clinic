@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'complaint.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'patient.css') }}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+		textarea
+		{
+			resize: none;
+		}
+	</style>
+{% endblock %}
+
+{% block title %}Patient Record{% endblock %}
+
+{% block main_content %}
+	{% include 'nav.html' %}
+	<div class="container">
+		<header><h1>JBM</h1></header>
+		<div class="login">
+			<a href="#"><button>Patient Complait</button></a>
+			<a href="#"><button>History</button></a>
+			<a href="#"><button>Examination</button></a>
+			<a href="#"><button>Investigation</button></a>
+			<a href="#"><button>Impression</button></a>
+			<a href="#"><button>Diagnosis</button></a>
+			<a href="#"><button>Treatment</button></a>
+			<a href="#"><button>Patient Type</button></a>
+			<a href="#"><button>Save</button></a>
+			<br><br>
+			<label for="patient_no">Patient Number</label>
+			<input type="text" name="patient_no">	
+			<button type="submit"><i class="fa fa-search"></i></button>
+			<!-- <input type="submit" value="Search"> -->
+			<br><br>
+			<textarea rows="20" cols="150"></textarea>	
+		</div>
+	</div>
+{% endblock %}

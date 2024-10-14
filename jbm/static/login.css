@@ -1,0 +1,69 @@
+.container
+{
+	text-align: center;
+	align-content: center;
+	position: relative;
+	font-size: 20px;
+}
+.container input
+{
+	position: absolute;
+}
+.container label
+{
+	margin-left: -170px;
+	margin-right: 7px;
+}
+.login 
+{
+	border: 1px solid black;
+	width: 300px;
+	height: 130px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	padding: 1rem;
+	align-content: center;
+	margin: auto;
+	font-size: 15px;
+	background: beige;
+}
+.login_btn
+{
+	border: 1rem;
+	padding: 3px;
+	width: 50px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+body
+{
+	overflow-x: hidden;
+	-ms-overflow-style: none; 
+  	scrollbar-width: none;
+}
+
+a
+{
+	text-decoration: none;
+	color: black;
+}
+
+button .hover
+{
+	background: whitesmoke;
+}
+
+.flash
+{
+	margin-top: -12px;
+	color: red;
+	text-align: center;
+}
+
+.btn
+{
+	color: whitesmoke;
+	background: blueviolet;
+	border: none;
+	cursor: pointer;
+}

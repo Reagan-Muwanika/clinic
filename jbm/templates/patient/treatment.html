@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Patient Treatment{% endblock %}
+
+{% block main_content %}
+    <form method="post" class="my_form">
+        <fieldset>
+            <legend><strong>Prescription & Dispencing Log</strong></legend>
+            <label for="patient_no"><span>*</span>Patient Number</label><br>
+            <input type="text" name="patient_no" required><br><br>
+            <label for="diagnosis"><span>*</span>Diagnosis</label><br>
+            <textarea name="diagnosis" id="" cols="60" rows="10"></textarea><br><br>
+            <label for="medication">
+                <span>*</span>
+                Medication
+            </label>
+            <textarea name="medication" class="medication"></textarea><br><br>
+        </fieldset>
+    </form>
+{% endblock %}

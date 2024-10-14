@@ -1,0 +1,28 @@
+<nav>
+	<div class="nav">
+		<div class="nav-btn">
+			<a href="{{ url_for('patient.register') }}">New Patient</a>
+			{% if g.user[2] == 'admin' or g.user[2] == 'dev' or g.user[2] == 'demo' %}
+				<a href="{{ url_for('authentications.register') }}">New Staff</a>
+			{% endif %}
+			<a href="{{ url_for('patient.search_for_patient_details') }}">Patient Files</a>
+			<a href="{{ url_for('reports.medical_reports') }}">Reports</a>
+		</div>
+		{% if g.user[2] == 'Doctor' or g.user == 'Laboratory' %}
+			<div class="nav-btn">
+				<button>Medical Forms</button>
+				<div class="links" style="width: 110px;">
+					<a href="{{ url_for('patient.test_details') }}">Test</a>
+					<a href="{{ url_for('reports.generate_report') }}">Doctors</a>
+				</div>
+			</div>
+		{% endif %}
+		<div class="nav-btn" style="float: right; margin-top: -10px;">
+			<button><span><i class='bx bxs-user' id="user-name"></i></span>{{ g.user[1] }}</button>
+			<div class="links" style="width: 115px;">
+				<a href="{{ url_for('authentications.change_user_password') }}">Change Password</a>
+				<a href="{{ url_for('authentications.logout') }}">Log Out</a>
+			</div>
+		</div>
+	</div>
+</nav>

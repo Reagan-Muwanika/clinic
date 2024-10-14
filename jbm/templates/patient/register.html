@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}Patient Registration{% endblock %}
+
+{% block main_content %}
+	<form method="post" class="my_form">
+		<fieldset>
+			<legend><strong>Register New Patient</strong></legend>
+			{% for message in get_flashed_messages() %}
+		   		<div class="flash">{{ message }}</div>
+		    {% endfor %}
+			<label for="fname"><span>*</span>First Name</label><br>
+			<input type="text" name="fname"><br><br>
+			<label for="lname"><span>*</span>Other Names</label><br>
+			<input type="text" name="lname"><br><br>
+			<label for="sex"><span>*</span>Gender</label><br>
+			{% if gr %}
+				<select name="sex" placeholder = "Gender">
+					{% for option in gr %}
+						<option value="{{option}}">{{option}}</option>
+					{% endfor %}
+				</select>
+			{% endif %}
+			<br><br>
+			<label for="dob"><span>*</span>Date of Birth</label><br>
+			{% if years %}
+				<select name="year" style="width: 125px;">
+					{% for option in years %}
+						<option value="{{ option }}">{{ option }}</option>
+					{% endfor %}	
+				</select>
+			{% endif %}
+			{% if months %}
+				<select name="month" style="width: 125px; margin-left: 10px;" required>
+					{% for option in months %}
+						<option value="{{ option }}">{{ option }}</option>
+					{% endfor %}	
+				</select>
+			{% endif %}
+			{% if days %}
+				<select name="day" style="width: 125px; margin-left: 10px;">
+					{% for option in days %}
+						<option value="{{ option }}">{{ option }}</option>
+					{% endfor %}	
+				</select>
+			{% endif %}
+			<br><br>
+			<label for="pat_tel">Phone Number</label><br>
+			<input type="text" name="pat_tel"><br><br>
+			<label for="village">Village</label><br>
+			<input type="text" name="village"><br><br>
+			<label for="parish">Parish</label><br>
+			<input type="text" name="parish"><br><br>
+			<label for="kin_name"><span>*</span>Next of Kin</label><br>
+			<input type="text" name="kin_name"><br><br>
+			<label for="kin_tel"><span>*</span>Next of Kin Tel</label><br>
+			<input type="text" name="kin_tel"><br><br>
+			<label for="relationship">Relationship</label><br>
+			{% if rs %}
+				<select name="relationship">
+					{% for option in rs %}
+						<option value="{{ option }}">{{ option }}</option>
+					{% endfor %}
+				</select>
+			{% endif %}
+			<br><br>
+			<input type="submit" value="Register" class="btn" style="width: 100px; margin-left: 250px;">
+			<input type="reset" value="Reset" class="btn" style="width: 100px; color: whitesmoke; margin-left: 5px;">
+			<br><br>
+		</fieldset>	
+	</form>
+{% endblock %}

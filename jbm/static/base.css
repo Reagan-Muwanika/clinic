@@ -1,0 +1,291 @@
+.content
+{
+	max-width: 1000px;
+	margin: auto;
+	position: relative;
+}
+
+header 
+{
+	background: indigo;
+	height: 100px;
+	margin-top: 40px;
+	margin-bottom: -22px;
+	border-radius: 2px;
+}
+
+.header h1
+{
+	padding-top: 10px;
+	font-size: 40px;
+	padding: 18px;
+	font-family: Courier New;
+}
+
+footer
+{
+	background: indigo;
+	height: 50px;
+	color: whitesmoke;
+	text-align: center;
+	border-radius: 2px;
+	margin-top: -17px;
+	font-size: 70%;
+	font-family: Times New Romans, Arial;
+}
+
+.content-body
+{
+	width: 1000px;
+	min-height: 300px;	
+	background: whitesmoke;
+	 min-zoom: 40%; 
+	font-family: Times New Romans;
+	font-size: 14px;
+}
+
+body
+{
+	min-zoom: 0.4;
+	max-zoom: 1.5;
+	zoom: 1.00;
+	overflow-x: hidden;
+}
+
+#body
+{
+	background: url(../static/bkgnd.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+header a
+{
+	color: whitesmoke;
+}
+
+.content-body input
+{
+	width: 350px;
+}
+
+.content-body select
+{
+	height: 20px;
+	width: 356px;
+}
+
+.headings
+{
+	width: 150px;
+}
+
+.flash
+{
+	color: red;
+	text-align: center;
+}
+
+.btn
+{
+	background: blueviolet;
+	color: whitesmoke;
+	border: none;
+	height: 22px;
+	border-radius: 2px;
+	width: 100px;
+	cursor: pointer;
+}
+
+a
+{
+	font-family: Times New Romans, Arial;
+	font-size: 85%;
+	color: white;
+	cursor: pointer;
+}
+
+table
+{
+	font-family: Times New Romans, Arial;
+	border-collapse: collapse;
+}
+
+td
+{
+	border: 0px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even)
+{
+	background-color: #D6EEEE;
+}
+
+textarea
+{
+	resize: none;
+	margin-left: 150px;
+	width: 400px;
+	height: 50px;
+	padding: 10px;
+}
+
+.medication
+{
+	height: 200px;
+}
+
+.my_form label
+{
+	margin-left: 150px;
+}
+
+.my_form
+{
+	width: 700px;
+	padding: 10px;
+	margin-left: 120px;
+}
+
+.submit input
+{
+	width: 30px;
+}
+
+.my_form input
+{
+	width: 400px;
+	margin-left: 150px;
+}
+
+.my_form select
+{
+	width: 405px;
+	margin-left: 150px;
+}
+
+span
+{
+	color: #ed1f24;
+}
+
+.triple
+{
+	width: 170px;
+}
+
+nav
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 35px;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+	background-color: indigo;
+	width: 100%;
+	z-index: 1000;
+}
+
+.nav
+{
+	margin-left: 170px;
+	width: 1150px;
+	
+}
+
+.nav-btn
+{
+	display: inline;
+	padding: 10px;
+	position: relative;
+}
+
+.nav-btn button
+{
+	color: #fff;
+	background: indigo;
+	border: none;
+	padding-top: 10px;
+	cursor: pointer;
+	position: relative;
+}
+
+.nav-btn:hover .links
+{
+	display: block;
+}
+
+.links
+{
+	display: none;
+  	position: absolute;
+  	background: blueviolet;
+  	width: 80px;
+	font-size: 90%;
+  	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  	z-index: 1;
+  	right: 0;
+  	margin-top: 2px;
+}
+
+.links a
+{
+	color: #000;
+  	padding: 14px 16px;
+  	text-decoration: none;
+  	display: block;
+}
+
+.links a:hover
+{
+	background: #EE82EE;
+}
+
+.nav-btn a
+{
+	color: white;
+	text-decoration: none;
+	padding: 5px;
+}
+
+a
+{
+	text-decoration: none;
+}
+
+.report
+{
+	width: 700px;
+	align-content: center;
+	text-align: center;
+	margin: auto;
+	min-height: 300px;
+}
+
+.patient td
+{
+	width: 200px;
+}
+
+.table
+{
+	width: 200px;
+}
+
+.value
+{
+	width: 350px;
+}
+
+.report tr:nth-child(even)
+{
+	background-color: whitesmoke;
+}

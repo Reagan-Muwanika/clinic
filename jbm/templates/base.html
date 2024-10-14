@@ -1,0 +1,23 @@
+	<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel = "stylesheet" href = "{{ url_for('static', filename = 'base.css') }}">
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body id="body">
+	{% include 'nav.html' %}
+	<div class="content">
+		{% include 'header.html' %}
+		<div class="content-body">
+			{% block main_content %}
+				No data available
+			{% endblock %}
+		</div>
+		<footer class="footer">
+			<p>MureTech Company ltd</p>
+		</footer>
+	</div>
+</body>
+</html>

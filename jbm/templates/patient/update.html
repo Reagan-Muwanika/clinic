@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Update Patient Data{% endblock %}
+
+{% block main_content %}
+	<form method="post" class="my_form">
+		<fieldset>
+			<legend><strong>Update Patient's Details</strong></legend>
+			{% for message in get_flashed_messages() %}
+				<div class="flash">{{ message }}</div>
+			{% endfor %}
+			<label for="fname"><span>*</span>First Name</label><br>
+			<input type="text" name="fname" value="{{ patient[0] }}" required><br><br>
+			<label for="lname"><span>*</span>Other Names</label><br>
+			<input type="text" name="lname" value="{{ patient[1] }}" required><br><br>
+			<label for="sex"><span>*</span>Gender</label><br>
+			<input type="text" name="sex" value="{{ patient[2] }}" readonly>
+			<br><br>
+			<label for="dob"><span>*</span>Date of Birth</label><br>
+			<input type="date" name="dob" value="{{ patient[3] }}" readonly>
+			<br><br>
+			<label for="pat_tel"><span>*</span>Phone Number</label><br>
+			<input type="text" name="pat_tel" value="0{{ patient[6] }}" required><br><br>
+			<label for="village"><span>*</span>Village</label><br>
+			<input type="text" name="village" value="{{ patient[4] }}" required><br><br>
+			<label for="parish"><span>*</span>Parish</label><br>
+			<input type="text" name="parish" value="{{ patient[5] }}" required><br><br>
+			<label for="kin_name"><span>*</span>Next of Kin</label><br>
+			<input type="text" name="kin_name" value="{{ patient[7] }}" required><br><br>
+			<label for="kin_tel"><span>*</span>Next of Kin Tel</label><br>
+			<input type="text" name="kin_tel" value="0{{ patient[8] }}" required><br><br>
+			<label for="relationship"><span>*</span>Relationship</label><br>
+			{% if rs %}
+				<select name="relationship" required>
+					{% for option in rs %}
+						<option value="{{ option }}">{{ option }}</option>
+					{% endfor %}
+				</select>
+			{% endif %}
+			<br><br>
+			<input type="submit" value="Update" class="btn" style="width: 100px; margin-left: 300px;">
+			<br><br>
+		</fieldset>
+	</form>
+{% endblock %}
