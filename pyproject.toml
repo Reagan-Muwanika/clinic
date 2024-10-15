@@ -1,0 +1,23 @@
+[project]
+name = "jbm"
+version = "1.0.0"
+authors = [
+	{name = "Reagan Muwanika", email = "reaganmuwanika647@gmail.com"},
+]
+description = "The basic computerised clinic management system"
+readme = "Readme.md"
+
+dependecies = [
+	"flask"
+	"mysql-python-connector"
+	"wtforms"
+]
+[build-system]
+require = [
+	"flit_core<4",
+	"python>=3.12.5",
+	"mysql_server>=8.3",
+	"flask>=3.0.3",
+	"mysql-python-connector>=9.1.0"
+]
+build-backend = "flit_core.buildapi"

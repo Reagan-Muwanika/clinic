@@ -24,5 +24,4 @@ def create_app(test_config = None):
 	config.initialize_app(app)
 
 
-
 	return app
