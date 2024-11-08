@@ -21,7 +21,7 @@ def connect_to_database():
     if 'db' not in g:
         config = {
             'user': 'root',
-            'password': 'mure647reagan',
+            'password': '',
             'host': '127.0.0.1',
             'port': 3306,
             'database': 'clinic',
@@ -30,7 +30,7 @@ def connect_to_database():
 
         try:
             g.db = mysql.connector.connect(**config)
-            # print(f'Database connection establised')
+            print(f'Database connection establised')
         except mysql.connector.Error as err:
             if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
                 return 'Access denied! Wrong Username or Password'
@@ -65,7 +65,7 @@ def initialize_database():
     with  open(path, 'r', encoding = 'utf8') as f:
         data = f.read()
         cursor = connect_to_database().cursor()
-        cursor = cursor().execute(data)
+        cursor = cursor.execute(data)
         
         
         
